@@ -1,0 +1,231 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: montserrat;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.hide {
+  display: none;
+}
+
+.main {
+  display: flex;
+  width: 800px;
+  flex-direction: column;
+}
+
+.top {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.graphics img {
+  border-radius: 8px;
+  box-shadow: 0 0 3px 0px #777777b8;
+  height: 300px;
+}
+
+.graphics {
+  padding: 15px 0px;
+}
+
+header h3 {
+  font-weight: normal;
+  margin: 0;
+  padding: 10px;
+}
+
+.actions {
+  padding: 10px;
+  background: #3a3a3a;
+  display: flex;
+  flex-direction: row;
+  border-radius: 3px;
+}
+
+.actions button {
+  background: none;
+  border: none;
+  color: white;
+  -webkit-user-select: none;
+  user-select: none;
+  width: 32px;
+  height: 22px;
+}
+
+.playlist {
+  background: #e3e3e3;
+  margin-top: 15px;
+  border-radius: 5px;
+  height: 300px;
+  width: 220px;
+}
+
+.selected {
+  background: white;
+}
+
+.playlist .header {
+  padding: 5px;
+}
+
+.songContainer {
+  cursor: pointer;
+  user-select: none;
+}
+
+.pltext {
+  padding: 5px;
+}
+
+.loi {
+  margin: 0;
+  list-style: none;
+  padding: 10px;
+}
+
+.loi li {
+  padding: 4px 0;
+  font-weight: 450;
+}
+
+.songlist {
+  overflow-y: scroll;
+  height: 271px;
+}
+
+.song {
+  padding: 10px;
+}
+
+.controls {
+  display: flex;
+  flex-direction: row;
+  height: 60px;
+  background: #3a3a3a;
+  color: white;
+  align-items: center;
+  position: relative;
+}
+
+.vlme {
+  display: flex;
+  align-content: center;
+  overflow: hidden;
+  width: 25px;
+  transition: all 500ms;
+  position: absolute;
+  left: 0;
+}
+
+.vlme:hover {
+  width: 90px;
+}
+
+.volum {
+  padding: 10px;
+}
+
+#volBar {
+  padding: 0;
+  margin: 0;
+  width: 50px;
+  background: transparent;
+}
+
+#volBar::-moz-range-thumb {
+  height: 10px;
+  width: 3px;
+  background: #2A6586;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.musicControls {
+  margin-left: 90px;
+}
+
+.musicControls span {
+  cursor: pointer;
+}
+
+.musicControls span:hover {
+  color: #2A6586;
+}
+
+.play {
+  background: #4AA9DE;
+  padding: 15px 18px;
+  border-radius: 100%;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+  position: relative;
+  z-index: 3;
+}
+
+.play:active {
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+}
+
+.play:hover {
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
+}
+
+.prev {
+  background: #4aa9de;
+  border-radius: 10px 0 0px 10px;
+  padding-left: 15px;
+  padding-right: 10px;
+  margin-right: -5px;
+  z-index: 1;
+}
+
+.next {
+  background: #4aa9de;
+  border-radius: 0px 10px 10px 0px;
+  padding-right: 15px;
+  padding-left: 10px;
+  margin-left: -5px;
+  z-index: 1;
+}
+
+.progressb {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 490px;
+  margin-left: 20px;
+}
+
+#prgbar {
+  background: transparent;
+  width: 350px;
+}
+
+.plsoptions {
+  display: flex;
+  justify-content: space-evenly;
+  flex: 1;
+}
+
+.plsoptions span {
+  cursor: pointer;
+}
+
+.plsoptions span:hover {
+  color: #2A6586;
+}
+
+.plsoptions span.active {
+  color: rgb(32, 77, 104);
+}
+
+.currentT, .totalT {
+  width: 35px;
+}

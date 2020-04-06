@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.slideshowCtn {
+  height: 500px;
+  width: 500px;
+  animation: slideshowAnimation;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  transition: all 500ms ease-in 200ms;
+}
+
+@keyframes slideshowAnimation {
+  from {
+    background-image: url(https://images.unsplash.com/photo-1585255318859-f5c15f4cffe9?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixlib=rb-1.2.1&q=80&w=500);
+  }
+  25% {
+    background-image: url(https://images.unsplash.com/photo-1584226761916-3fd67ab5ac3a?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixlib=rb-1.2.1&q=80&w=500);
+  }
+  50% {
+    background-image: url(https://images.unsplash.com/photo-1585179292338-45ba1f62f082?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixlib=rb-1.2.1&q=80&w=500);
+  }
+  to {
+    background-image: url(https://images.unsplash.com/photo-1585255318859-f5c15f4cffe9?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixlib=rb-1.2.1&q=80&w=500);
+  }
+}
