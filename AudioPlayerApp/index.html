@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hello World!</title>
+  <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+</head>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+  }
+
+  .remote {
+    border: none;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+  }
+</style>
+
+<body>
+  <iframe class="remote" src="https://ramagg.com/jokegenerator"></iframe>
+</body>
+
+</html>
