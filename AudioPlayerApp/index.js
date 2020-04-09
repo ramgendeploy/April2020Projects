@@ -4,7 +4,7 @@ function createWindow() {
   // Create the browser window.
   const win = new BrowserWindow({
     width: 800,
-    height: 500,
+    height: 485,
     minHeight: 500,
     minWidth: 400,
     resizable: false,
@@ -15,7 +15,7 @@ function createWindow() {
   win.removeMenu()
   // Menu.setApplicationMenu(null)
   // and load the index.html of the app.
-  win.loadFile('index.html')
+  win.loadFile('./build/index.html')
   // Open the DevTools.
   // win.webContents.openDevTools()
 }
