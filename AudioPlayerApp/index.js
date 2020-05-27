@@ -5,9 +5,11 @@ const dialog = electron.dialog
 
 const BrowserWindow = electron.BrowserWindow
 
-const path = require('path')
 const url = require('url')
 const isDev = require('electron-is-dev')
+
+const path = require('path')
+const fs = require('fs')
 
 let mainWindow
 
@@ -49,15 +51,31 @@ app.on('activate', () => {
 // Interface
 const { ipcMain } = require('electron')
 ipcMain.on('asynchronous-message', (event, arg) => {
-  console.log(arg) // prints "ping"
-  event.reply('asynchronous-reply', 'Electron response')
-
   dialog
     .showOpenDialog(mainWindow, {
+      filters: [{ name: 'Audio', extensions: ['mp3', 'ogg', 'wav'] }],
+      title: 'Select a directory',
+      buttonLabel: 'Select directory',
       properties: ['openFile', 'openDirectory'],
     })
     .then((result) => {
-      event.reply('asynchronous-reply', [result.canceled, result.filePaths])
+      if (!result.canceled) {
+        fs.readdir(
+          result.filePaths[0],
+          { withFileTypes: true },
+          (err, files) => {
+            if (err) {
+              event.reply('asynchronous-reply', [
+                result.canceled,
+                result.filePaths,
+              ])
+            }
+            event.reply('asynchronous-reply', [false, result.filePaths, files])
+          },
+        )
+      } else {
+        event.reply('asynchronous-reply', [result.canceled, result.filePaths])
+      }
     })
     .catch((err) => {
       console.log(err)

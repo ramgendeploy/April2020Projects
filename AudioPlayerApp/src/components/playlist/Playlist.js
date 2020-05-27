@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import playerContext from '../../context/playerContext'
 
-
 function Playlist() {
   const { SetCurrent, currentSong, songs } = useContext(playerContext)
 
@@ -13,14 +12,20 @@ function Playlist() {
       </div>
       <div className="songlist">
         <ul className="loi">
-          {
-            songs.map((song, i) =>
-              <li className={'songContainer ' + (currentSong === i ? 'selected' : '')} key={i} onClick={() => { SetCurrent(i); }}>
-                <i className="fas fa-music"></i>
-                <span className="song">{song[0]}</span>
-              </li>
-            )
-          }
+          {songs.map((song, i) => (
+            <li
+              className={
+                'songContainer ' + (currentSong === i ? 'selected' : '')
+              }
+              key={i}
+              onClick={() => {
+                SetCurrent(i)
+              }}
+            >
+              <i className="fas fa-music"></i>
+              <span className="song">{song[0]}</span>
+            </li>
+          ))}
         </ul>
       </div>
     </div>
