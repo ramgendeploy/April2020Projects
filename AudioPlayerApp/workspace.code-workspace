@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "..\\.git"
+		},
+		{
+			"path": "..\\audioplayer"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\imagegallery"
+		},
+		{
+			"path": "..\\Slideshow"
+		}
+	]
+}
