@@ -12,9 +12,10 @@ const reqData = () => {
 function Actions() {
   const [url, ulrSet] = useState('')
   const { songsSet } = useContext(playerContext)
+  
   useEffect(() => {
     ipcRenderer.on('asynchronous-reply', (event, arg) => {
-      console.log(arg)
+      // console.log(arg)
       if (!arg[0]) {
         ulrSet(arg[1][0])
         let prefix = arg[1] + '/'
@@ -22,7 +23,7 @@ function Actions() {
           return [s.name.split('.')[0], prefix + s.name]
         })
         // console.log('Hey!')
-        console.log(newSongs)
+        // console.log(newSongs)
         songsSet(newSongs)
       }
     })
