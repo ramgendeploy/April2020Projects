@@ -18,19 +18,21 @@ function createWindow() {
     width: 800,
     height: 500,
     minHeight: 500,
-    minWidth: 400,
+    minWidth: 850,
+    maxWidth: 1200,
+    maxHeight: 800,
+    titleBarStyle: 'customButtonsOnHover',
+    frame: false,
     // resizable: false,
     webPreferences: {
       nodeIntegration: true,
     },
   })
-  // mainWindow.loadURL(
-  //   isDev
-  //     ? 'http://localhost:3000'
-  //     : `file://${path.join(__dirname, '/build/index.html')}`,
-  // )
+
+  mainWindow.removeMenu()
+
   mainWindow.loadURL(`file://${path.join(__dirname, '/build/index.html')}`)
-  // mainWindow.removeMenu()
+  mainWindow.webContents.openDevTools()
   mainWindow.on('closed', () => (mainWindow = null))
 }
 

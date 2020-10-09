@@ -5,7 +5,7 @@ function Playlist() {
   const { SetCurrent, currentSong, songs } = useContext(playerContext)
 
   return (
-    <div className="playlist">
+    <div className="playlist no_drag">
       <div className="header">
         <i className="fas fa-list-ul"></i>
         <span className="pltext">Play List</span>

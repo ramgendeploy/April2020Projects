@@ -10,13 +10,23 @@ body {
   height: 100vh;
 }
 
+.draggable {
+  -webkit-app-region: drag;
+  user-select: none;
+}
+
+.no_drag {
+  -webkit-app-region: no-drag;
+}
+
 .hide {
   display: none;
 }
 
 .main {
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  width: 800px;
   flex-direction: column;
 }
 
@@ -24,16 +34,29 @@ body {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
+  flex-grow: 1;
+}
+
+.left {
+  flex: 1 1;
+  padding: 10px;
+}
+
+.right {
+  padding: 10px;
 }
 
 .graphics img {
-  border-radius: 8px;
-  box-shadow: 0 0 3px 0px #777777b8;
-  height: 300px;
+  border-radius: 100%;
+  box-shadow: 0 0 3px 0 hsla(0, 0%, 46.7%, .72);
+  height: 60vh;
+  width: 60vh;
 }
 
 .graphics {
   padding: 15px 0px;
+  display: flex;
+  justify-content: center;
 }
 
 header h3 {
@@ -112,7 +135,7 @@ header h3 {
   background: #3a3a3a;
   color: white;
   align-items: center;
-  position: relative;
+  width: 100vw;
 }
 
 .vlme {
