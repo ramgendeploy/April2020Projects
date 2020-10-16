@@ -30,6 +30,29 @@ body {
   flex-direction: column;
 }
 
+.windowCtr {
+  display: flex;
+  background: #383838;
+  color: white;
+  padding: 2px;
+}
+
+span.appName {
+  flex: 1 1;
+}
+
+span.closeW {
+  width: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+
+span.minW {
+  width: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+
 .top {
   width: 100%;
   display: flex;
@@ -40,10 +63,14 @@ body {
 .left {
   flex: 1 1;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .right {
   padding: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .graphics img {
@@ -51,12 +78,16 @@ body {
   box-shadow: 0 0 3px 0 hsla(0, 0%, 46.7%, .72);
   height: 60vh;
   width: 60vh;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 .graphics {
   padding: 15px 0px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex: 1 1;
 }
 
 header h3 {
@@ -87,8 +118,9 @@ header h3 {
   background: #e3e3e3;
   margin-top: 15px;
   border-radius: 5px;
-  height: 300px;
-  width: 220px;
+  flex: 1 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .selected {
@@ -112,6 +144,10 @@ header h3 {
   margin: 0;
   list-style: none;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: auto;
 }
 
 .loi li {
@@ -120,8 +156,7 @@ header h3 {
 }
 
 .songlist {
-  overflow-y: scroll;
-  height: 271px;
+  overflow-y: auto;
 }
 
 .song {
